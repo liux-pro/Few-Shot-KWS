@@ -76,7 +76,7 @@ class FewShotSpeechDataset(TransformDataset):
         return class_names
     
     def load_audio(self, key, out_field, d):
-        sound, _ = torchaudio.load(filepath=d[key], normalization=True,
+        sound, _ = torchaudio.load(filepath=d[key], normalize=True,
                                          num_frames=self.desired_samples)
         d[out_field] = sound
         return d
